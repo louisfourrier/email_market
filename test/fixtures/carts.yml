@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id             :integer          not null, primary key
+#  message_id     :integer
+#  total_price    :float
+#  delivery_date  :datetime
+#  products_count :string(255)
+#  currency       :string(255)
+#  treated        :boolean
+#  treated_date   :datetime
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message_id: 
+  total_price: 1.5
+  delivery_date: 2014-11-24 14:21:37
+  products_count: MyString
+  currency: MyString
+  treated: false
+  treated_date: 2014-11-24 14:21:37
+
+two:
+  message_id: 
+  total_price: 1.5
+  delivery_date: 2014-11-24 14:21:37
+  products_count: MyString
+  currency: MyString
+  treated: false
+  treated_date: 2014-11-24 14:21:37

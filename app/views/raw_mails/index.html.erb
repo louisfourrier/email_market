@@ -1,0 +1,29 @@
+<h1>Listing raw_mails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email from</th>
+      <th>Email body</th>
+      <th>Email subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_mails.each do |raw_mail| %>
+      <tr>
+        <td><%= raw_mail.email_from %></td>
+        <td><%= raw_mail.email_body %></td>
+        <td><%= raw_mail.email_subject %></td>
+        <td><%= link_to 'Show', raw_mail %></td>
+        <td><%= link_to 'Edit', edit_raw_mail_path(raw_mail) %></td>
+        <td><%= link_to 'Destroy', raw_mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw mail', new_raw_mail_path %>

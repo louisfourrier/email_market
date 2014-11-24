@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mail account:</strong>
+  <%= @message.mail_account %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @message.subject %>
+</p>
+
+
+<p>
+  <strong>Html content:</strong>
+  <%= @message.html_content %>
+</p>
+
+<p>
+  <strong>Treated:</strong>
+  <%= @message.treated %>
+</p>
+
+<p>
+  <strong>Treated date:</strong>
+  <%= @message.treated_date %>
+</p>
+
+<p>
+  <strong>Mail commerce platform:</strong>
+  <%= @message.mail_commerce_platform %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

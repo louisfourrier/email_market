@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mail_account.user %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @mail_account.email %>
+</p>
+
+<p>
+  <strong>Email verified:</strong>
+  <%= @mail_account.email_verified %>
+</p>
+
+<p>
+  <strong>Verify token:</strong>
+  <%= @mail_account.verify_token %>
+</p>
+
+<p>
+  <strong>Verify sent date:</strong>
+  <%= @mail_account.verify_sent_date %>
+</p>
+
+<%= link_to 'Edit', edit_mail_account_path(@mail_account) %> |
+<%= link_to 'Back', mail_accounts_path %>

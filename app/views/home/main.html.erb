@@ -1,0 +1,65 @@
+<div class="container">
+	<% if user_signed_in? %>
+	<div class="jumbotron">
+		<h1>Bienvenue sur le site <%= current_user.full_name %></h1>
+		<p>
+			Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulaif mail par mail et nous essayerons de vous trouver des offres interessantes
+		</p>
+		<p>
+			<a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a>
+		</p>
+
+		<%= current_user.confirmed_at  %>
+
+	</div>
+
+	<% else%>
+
+	<div class="jumbotron">
+		<h1>Bienvenue sur le site de AfterBuy</h1>
+		<p>
+			Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulaif mail par mail et nous essayerons de vous trouver des offres interessantes
+		</p>
+		<p>
+			<a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a>
+		</p>
+	</div>
+
+	<% end %>
+
+	<% if user_signed_in? %>
+	<h2 class="page-header">Comptes email</h2>
+
+	<% current_user.mail_accounts.each do |ma| %>
+
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= link_to ma.email, ma %></h3>
+			</div>
+			<div class="panel-body">
+				<p>
+					<% if ma.email_verified %>
+					<span class="text text-success">Email vérifié</span>
+					<% else %>
+					<span class="text text-danger">Email non verifié</span>
+					<% end %>
+				</p>
+				<p>
+					<strong>Nombre de mails recus :</strong><%= ma.messages.size %>
+				</p>
+			</div>
+		</div>
+		<% end %>
+
+		<h2 class="page-header">Messages envoyés</h2>
+
+		<% current_user.messages.each do |message| %>
+		<div>
+			<h4><%= link_to message.subject, message %></h4>
+		</div>
+		<% end %>
+
+		<% end %>
+
+	</div>

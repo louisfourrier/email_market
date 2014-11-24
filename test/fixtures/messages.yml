@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id                     :integer          not null, primary key
+#  mail_account_id        :integer
+#  html_content           :text
+#  treated                :boolean
+#  treated_date           :datetime
+#  mail_commerce_platform :text
+#  created_at             :datetime
+#  updated_at             :datetime
+#  subject                :text
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail_account_id: 
+  html_content: MyText
+  treated: false
+  treated_date: 2014-11-24 14:19:35
+  mail_commerce_platform: MyText
+
+two:
+  mail_account_id: 
+  html_content: MyText
+  treated: false
+  treated_date: 2014-11-24 14:19:35
+  mail_commerce_platform: MyText

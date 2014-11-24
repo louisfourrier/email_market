@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @cart.message %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @cart.total_price %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @cart.delivery_date %>
+</p>
+
+<p>
+  <strong>Products count:</strong>
+  <%= @cart.products_count %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @cart.currency %>
+</p>
+
+<p>
+  <strong>Treated:</strong>
+  <%= @cart.treated %>
+</p>
+
+<p>
+  <strong>Treated date:</strong>
+  <%= @cart.treated_date %>
+</p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

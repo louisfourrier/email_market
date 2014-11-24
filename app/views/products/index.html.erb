@@ -1,0 +1,41 @@
+<h1>Listing products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Slug</th>
+      <th>Amazon url</th>
+      <th>Product detail</th>
+      <th>Url from site</th>
+      <th>Html content</th>
+      <th>Html url</th>
+      <th>Image url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.slug %></td>
+        <td><%= product.amazon_url %></td>
+        <td><%= product.product_detail %></td>
+        <td><%= product.url_from_site %></td>
+        <td><%= product.html_content %></td>
+        <td><%= product.html_url %></td>
+        <td><%= product.image_url %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
