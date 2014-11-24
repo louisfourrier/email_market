@@ -96,7 +96,7 @@ Rails.application.configure do
   
   
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
+  config.action_mailer.default_url_options = { :host => "http://fathomless-lowlands-6050.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -105,8 +105,8 @@ Rails.application.configure do
   # Change the address of emails of the notifications of errors
   config.middleware.use ExceptionNotification::Rack,
   :email => {
-    :email_prefix => "Nadvence Exceptions Notification",
-    :sender_address => %{"Nadvence Server" <administration@rebble.it>},
+    :email_prefix => "MailMarket Exceptions Notification",
+    :sender_address => %{"Mail Market Server" <admin@rebble.it>},
     :exception_recipients => %w{louis.fourrier@gmail.com}
   }
 
