@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :raw_mails
+
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+  
+    resources :raw_mails
 
     resources :products
 
