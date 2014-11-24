@@ -87,11 +87,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 587,
-    domain: 'nadvence-beta.com',
+    domain: 'heroku.com',
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: Rails.application.secrets.email_provider_username,
-    password: Rails.application.secrets.email_provider_password
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD']
   }
   
   
@@ -106,8 +106,8 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "Nadvence Exceptions Notification",
-    :sender_address => %{"Nadvence Server" <admin@rebble.it>},
-    :exception_recipients => %w{admin@rebble.it}
+    :sender_address => %{"Nadvence Server" <administration@rebble.it>},
+    :exception_recipients => %w{louis.fourrier@gmail.com}
   }
 
 end
