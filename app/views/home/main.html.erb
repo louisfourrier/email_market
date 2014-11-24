@@ -28,38 +28,43 @@
 	<% end %>
 
 	<% if user_signed_in? %>
-	<h2 class="page-header">Comptes email</h2>
+	<div class="col-md-12">
+		<h2 class="page-header">Comptes email</h2>
 
-	<% current_user.mail_accounts.each do |ma| %>
+		<% current_user.mail_accounts.each do |ma| %>
 
-	<div class="col-md-4">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title"><%= link_to ma.email, ma %></h3>
-			</div>
-			<div class="panel-body">
-				<p>
-					<% if ma.email_verified %>
-					<span class="text text-success">Email vérifié</span>
-					<% else %>
-					<span class="text text-danger">Email non verifié</span>
-					<% end %>
-				</p>
-				<p>
-					<strong>Nombre de mails recus :</strong><%= ma.messages.size %>
-				</p>
+		<div class="col-md-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= link_to ma.email, ma %></h3>
+				</div>
+				<div class="panel-body">
+					<p>
+						<% if ma.email_verified %>
+						<span class="text text-success">Email vérifié</span>
+						<% else %>
+						<span class="text text-danger">Email non verifié</span>
+						<% end %>
+					</p>
+					<p>
+						<strong>Nombre de mails recus :</strong><%= ma.messages.size %>
+					</p>
+				</div>
 			</div>
 		</div>
 		<% end %>
+	</div>
 
+	<div class="col-md-12">
 		<h2 class="page-header">Messages envoyés</h2>
 
 		<% current_user.messages.each do |message| %>
-		<div>
-			<h4><%= link_to message.subject, message %></h4>
-		</div>
-		<% end %>
-
-		<% end %>
-
+		<div class=">
+		<h4><%= link_to message.subject, message %></h4>
 	</div>
+	<% end %>
+
+</div>
+<% end %>
+
+</div>
