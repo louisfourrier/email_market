@@ -6,8 +6,8 @@ class DeviseMailer < Devise::Mailer
     headers = {
       :subject       => subject_for(action),
       :to            => resource.email,
-      :from          => 'mailmarket@nadvence.com',
-      :reply_to      => 'louis.fourrier@rebble.it'
+      :from          => 'mailmarket@takethebuy.com',
+      :reply_to      => 'louis.fourrier@reble.it'
     }.merge(opts)
   end
   
@@ -22,7 +22,6 @@ class DeviseMailer < Devise::Mailer
   def unlock_instructions(record, token, opts={})
     super
   end
-  
   
   
 end
