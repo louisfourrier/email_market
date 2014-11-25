@@ -1,8 +1,8 @@
 fr:
-  website_url: ""
-  website_title: "AfterBuy"
-  website_description: ""
-  website_keywords: ""
+  website_url: "http://www.takethebuy.com"
+  website_title: "Take the Buy"
+  website_description: "Take the buy vous permet de charger par mail un ensemble de référence et de bénéficier des meilleurs prix très rapidement"
+  website_keywords: "take the buy"
   modal_close: "Fermer"
   will_paginate:
     next_label: "Suivant"

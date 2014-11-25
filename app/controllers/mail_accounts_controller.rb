@@ -1,5 +1,7 @@
 class MailAccountsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_mail_account, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /mail_accounts
   # GET /mail_accounts.json
@@ -64,7 +66,7 @@ class MailAccountsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mail_account
-      @mail_account = MailAccount.find(params[:id])
+      @mail_account = current_user.mail_accounts.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

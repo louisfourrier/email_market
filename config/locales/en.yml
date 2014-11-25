@@ -20,10 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  website_url: ""
-  website_title: "AfterBuy"
-  website_description: ""
-  website_keywords: ""
+  website_url: "http://www.takethebuy.com"
+  website_title: "TakeTheBuy"
+  website_description: "Take the buy"
+  website_keywords: "take the buy"
   modal_close: "Close"
   are_you_sure: "Are you sure ?"
   date:

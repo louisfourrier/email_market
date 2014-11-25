@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
   
+    post '/email_processor' => 'griddler/emails#create'
+  
     resources :raw_mails
 
     resources :products

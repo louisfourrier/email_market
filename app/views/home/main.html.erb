@@ -1,70 +1,73 @@
-<div class="container">
-	<% if user_signed_in? %>
-	<div class="jumbotron">
-		<h1>Bienvenue sur le site <%= current_user.full_name %></h1>
-		<p>
-			Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulaif mail par mail et nous essayerons de vous trouver des offres interessantes
-		</p>
-		<p>
-			<a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a>
-		</p>
+<% if user_signed_in? %>
+<div class="jumbotron">
+	<h1>Bienvenue sur le site <%= current_user.full_name %></h1>
+	<p>
+		Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulatif mail par mail et nous essayerons de vous trouver des offres interessantes
+	</p>
 
-		<%= current_user.confirmed_at  %>
+	<%= current_user.confirmed_at  %>
+
+</div>
+
+<% else%>
+
+<div class="jumbotron">
+	<h1>Bienvenue sur le site de Take the Buy</h1>
+	<p>
+		Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulatif mail par mail et nous essayerons de vous trouver des offres interessantes
+	</p>
+
+	<div class="col-md-6 text-center">
+		<%= link_to "Inscription", new_user_registration_path, :class => "btn btn-primary btn-lg" %>
 
 	</div>
-
-	<% else%>
-
-	<div class="jumbotron">
-		<h1>Bienvenue sur le site de AfterBuy</h1>
-		<p>
-			Ce site vous permet d'avoir des contre propositions commerciales à partir d'une facture. Envoyez nous votre récapitulaif mail par mail et nous essayerons de vous trouver des offres interessantes
-		</p>
-		<p>
-			<a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a>
-		</p>
+	<div class="col-md-6 text-center">
+		<%= link_to "Connexion", new_user_session_path, :class => "btn btn-primary btn-lg" %>
 	</div>
+	
+	<br />
 
-	<% end %>
+</div>
 
-	<% if user_signed_in? %>
-	<div class="col-md-12">
-		<h2 class="page-header">Comptes email</h2>
+<% end %>
 
-		<% current_user.mail_accounts.each do |ma| %>
+<% if user_signed_in? %>
+<div class="col-md-12">
+	<h2 class="page-header">Comptes email</h2>
 
-		<div class="col-md-4">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title"><%= link_to ma.email, ma %></h3>
-				</div>
-				<div class="panel-body">
-					<p>
-						<% if ma.email_verified %>
-						<span class="text text-success">Email vérifié</span>
-						<% else %>
-						<span class="text text-danger">Email non verifié</span>
-						<% end %>
-					</p>
-					<p>
-						<strong>Nombre de mails recus :</strong><%= ma.messages.size %>
-					</p>
-				</div>
+	<% current_user.mail_accounts.each do |ma| %>
+
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= link_to ma.email, ma %></h3>
+			</div>
+			<div class="panel-body">
+				<p>
+					<% if ma.email_verified %>
+					<span class="text text-success">Email vérifié</span>
+					<% else %>
+					<span class="text text-danger">Email non verifié</span>
+					<% end %>
+				</p>
+				<p>
+					<strong>Nombre de mails recus :</strong><%= ma.messages.size %>
+				</p>
 			</div>
 		</div>
-		<% end %>
-	</div>
-
-	<div class="col-md-12">
-		<h2 class="page-header">Messages envoyés</h2>
-
-		<% current_user.messages.each do |message| %>
-		<div class=">
-		<h4><%= link_to message.subject, message %></h4>
 	</div>
 	<% end %>
+</div>
 
+<div class="col-md-12">
+	<h2 class="page-header">Messages envoyés</h2>
+
+	<% current_user.messages.each do |message| %>
+	<div class=">
+	<h4><%= link_to message.subject, message %></h4>
 </div>
 <% end %>
 
 </div>
+<% end %>
+
